@@ -1,0 +1,50 @@
+<template name="addfriends">
+  <div class="jumbotron">
+    <h1>Here to connect with friends</h1>
+  </div>
+    {{> morefriends}}
+    {{> showpeople}}
+</template>
+
+<template name="morefriends">
+   <h1>Add friends</h1><hr>
+   {{> friendrow}}
+</template>
+
+<template name="friendrow">
+  <strong>UserName</strong>:<input type="text" id="username"><hr>
+  <strong>Age</strong>:<input type="text" id="age"><hr>
+  <div>
+  <label for="options">Vehicle</label>
+  <select class="form-control" id="vehicle">
+    <option>yes</option>
+    <option>no</option>
+  </select>
+  </div>
+  <hr>
+  <button type="submit" class="btn button btn-primary btn-lg" id="submit_info">Add New Friend!
+  </button><hr>
+</template>
+
+<template name="showpeople">
+  <div>
+  <p><strong>Your Friends</strong></p>
+  <ul>
+  {{#each p in peoplelist}}
+  {{#if currentUser}}
+    {{#if isOwner p}}
+      <li>{{>personrow person=p}}</li>
+    {{/if}}
+  {{else}}
+  <h1>Please log in to see all your friends</h1>
+  {{/if}}
+  {{/each}}
+  </ul>
+  </div>
+</template>
+
+<template name="personrow">
+  {{person.username}} - {{person.havevehicle12345}} - {{person.age}}
+  <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="star" aria-hidden="true">update</span>
+  <span class="glyphicon glyphicon glyphicon-erase" id="erase" aria-hidden="true">delete</span>
+</template>

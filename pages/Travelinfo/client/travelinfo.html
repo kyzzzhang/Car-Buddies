@@ -1,0 +1,10 @@
+<template name="travelinfo">
+  <body style="background-color:#ADD8E6;">
+    <h1 style="color:#808080;">Want Extra Infomation?</h1>
+    <ul>
+      {{#each l in linkData}}
+          <li><a href="{{l.link}}">{{l.name}} </a></li>
+      {{/each}}
+    </ul>
+  </body>
+</template>

@@ -1,0 +1,25 @@
+<template name="about">
+<h1>About Us</h1>
+
+About the cutest team ever:
+<table class="table table-bordered">
+	<thead>
+		<tr class="success"><th>Name</th><th>Email</th><th>Comments</th></tr>
+	</thead>
+	<tbody>
+		{{#each person in team}}
+  		{{> teamrow t=person}}
+		{{/each}}
+	</tbody>
+</table>
+
+</template>
+
+
+<template name="teamrow">
+   <tr class="info">
+   	  <td>{{t.name}}</td>
+   	  <td>{{t.email}}</td>
+			<td>{{t.comments}}</td>
+   </tr>
+</template>
