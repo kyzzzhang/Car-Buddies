@@ -50,12 +50,19 @@
     <label for="otherInfo">Want your Car Buddy to learn more about you?</label>
     <textarea  rows="3" cols="20" placeholder="I'm cute"></textarea>
   </div>
-      <input type="checkbox"> Agree to trust us!<hr>
   <button type="submit" class="btn button btn btn-xs">Submit</button>
-</form>
+  </form>
   <p>This is your Profile</p>
-      {{>showprofile person}}<hr>
+  {{#each p in peoplelist}}
+  {{#if currentUser}}
+    {{#if isOwner p}}
+      {{>showprofile person=p}}<hr>
+    {{/if}}
+  {{/if}}
+  {{/each}}
     <a href="/addfriends">Here to connect with more friends</a>
+
+
   {{else}}
   <div class="jumbotron">
   <h1>Please create your account and log in</h1>

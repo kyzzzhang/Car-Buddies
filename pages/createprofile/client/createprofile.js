@@ -3,7 +3,7 @@ Template.showpeople.helpers({
 })
 
 Template.userInfo.events({
-  'click button'(elt,instance) {
+  'click button':function(elt,instance) {
     const name=instance.$('#name').val();
     const career=instance.$('#career').val();
     const havevehicle=instance.$('#vehicle').val();
@@ -19,7 +19,7 @@ Template.userInfo.events({
 })
 
 Template.showprofile.events({
-  'click #tree'(elt,instance){
+  'click #tree':function(elt,instance){
     console.dir(this);
     console.log(this.person._id);
     const name=this.person.name;
@@ -28,7 +28,7 @@ Template.showprofile.events({
         name:new_Name
     }})
   },
-  'click #tree2'(elt,instance) {
+  'click #tree2':function(elt,instance) {
     console.dir(this);
     console.log(this.person._id);
     //get vehicle
