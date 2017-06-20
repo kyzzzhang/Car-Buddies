@@ -22,9 +22,10 @@ Template.showprofile.events({
   'click #tree'(elt,instance){
     console.dir(this);
     console.log(this.person._id);
-    const newName=this.person.name;
+    const name=this.person.name;
+    var new_Name = instance.$('#name').val();
     AllUsers.update(this.person._id,{$set: {
-        name:newName
+        name:new_Name
     }})
   },
   'click #tree2'(elt,instance) {
@@ -38,7 +39,7 @@ Template.showprofile.events({
     }else{
       new_value = "yes";
     }
-    Friends.update(this.person._id,{$set: {
+    AllUsers.update(this.person._id,{$set: {
         havevehicle12345:new_value
     }})
 })
