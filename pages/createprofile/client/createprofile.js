@@ -27,4 +27,18 @@ Template.showprofile.events({
         name:newName
     }})
   },
+  'click #tree2'(elt,instance) {
+    console.dir(this);
+    console.log(this.person._id);
+    //get vehicle
+    const vehicle = this.person.havevehicle12345;
+    var new_value = "";
+    if(vehicle === "yes"){
+      new_value = "no";
+    }else{
+      new_value = "yes";
+    }
+    Friends.update(this.person._id,{$set: {
+        havevehicle12345:new_value
+    }})
 })
