@@ -19,6 +19,30 @@
   <h1>Welcome to your Car Buddies</h1>
   </div>
   <h3>Update Your Profile</h3>
+  {{>createprofile}}
+  {{> showuser}}
+    <a href="/addfriends">Here to connect with more friends</a>
+  {{else}}
+  <div class="jumbotron">
+  <h1>Please create your account and log in</h1>
+  </div>
+  {{/if}}
+  </body>
+</template>
+
+<template name="showuser">
+  <p>This is your Profile</p>
+  {{#each p in peoplelist}}
+    {{#if currentUser}}
+      {{#if isOwner p}}
+        {{>showprofile person=p}}<hr>
+        {{/if}}
+      {{/if}}
+  {{/each}}
+</template>
+
+
+<template name="createprofile">
   <form>
   <div>
     <label for="id">Start Date</label>
@@ -37,7 +61,7 @@
   </div>
   <div>
   <label for="options">Vehicle</label>
-  <select class="form-control">
+  <select class="form-control" id="vehicle">
     <option>yes</option>
     <option>no</option>
   </select>
@@ -50,23 +74,8 @@
     <label for="otherInfo">Want your Car Buddy to learn more about you?</label>
     <textarea  rows="3" cols="20" placeholder="I'm cute"></textarea>
   </div>
-  <button type="submit" class="btn button btn btn-xs">Submit</button>
+  <button type="submit" class="btn button btn btn-xs" id="submitProfile">Submit</button>
   </form>
-  <p>This is your Profile</p>
-  {{#each p in peoplelist}}
-    {{#if currentUser}}
-      {{#if isOwner p}}
-        {{>showprofile person=p}}<hr>
-        {{/if}}
-      {{/if}}
-  {{/each}}
-    <a href="/addfriends">Here to connect with more friends</a>
-  {{else}}
-  <div class="jumbotron">
-  <h1>Please create your account and log in</h1>
-  </div>
-  {{/if}}
-  </body>
 </template>
 
 <template name="showprofile">

@@ -1,14 +1,15 @@
-Template.showpeople.helpers({
+Template.userInfo.helpers({
   peoplelist() {return AllUsers.find()},
 })
 
-Template.userInfo.events({
-  'click button':function(elt,instance) {
+Template.createprofile.events({
+  'click #submitProfile':function(elt,instance) {
+    event.preventDefault();
     const name=instance.$('#name').val();
     const career=instance.$('#career').val();
     const havevehicle=instance.$('#vehicle').val();
     const otherinfo=instance.$('#otherinfo').val();
-    console.log('adding '+username);
+    console.log('adding '+name);
     instance.$('#name').val("");
     instance.$('#career').val("");
     instance.$('#vehicle').val("");
@@ -18,7 +19,7 @@ Template.userInfo.events({
   }
 })
 
-Template.showprofile.events({
+Template.createprofile.events({
   'click #tree':function(elt,instance){
     console.dir(this);
     console.log(this.person._id);

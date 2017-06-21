@@ -13,17 +13,17 @@ Template.friendrow.events({
     instance.$('#username').val("");
     instance.$('#age').val("");
     instance.$('#vehicle').val("");
-    //Friends.insert({username:username,age:age,havevehicle12345:havevehicle,
-     //owner:Meteor.userId(), createAt:new Date()});
-    //People.insert({name,birthyear})
+    Friends.insert({username:username,age:age,havevehicle12345:havevehicle,
+    owner:Meteor.userId(), createAt:new Date()});
+    
 
-    var friends =
+    /*var friends =
       {username:username,
        age:age,
        havevehicle12345:havevehicle,
        owner:Meteor.userId(),
         createAt:new Date()}
-    Meteor.call('friends.insert',friends);
+    Meteor.call('friends.insert',friends);*/
   },
 
 })
@@ -55,7 +55,7 @@ Template.personrow.events({
   'click #erase'(elt,instance){
     console.dir(this);
     console.log(this.person._id);
-    Meteor.call('friends.remove',this.person);
-    //Friends.remove(this.person._id);
+    //Meteor.call('friends.remove',this.person);
+    Friends.remove(this.person._id);
   }
 })

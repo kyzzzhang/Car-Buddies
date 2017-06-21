@@ -32,3 +32,4 @@ autopublish@1.0.7
 shell-server@0.2.3
 google-config-ui@1.0.0
 dynamic-import
+insecure
