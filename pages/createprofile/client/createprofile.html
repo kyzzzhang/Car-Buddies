@@ -54,15 +54,13 @@
   </form>
   <p>This is your Profile</p>
   {{#each p in peoplelist}}
-  {{#if currentUser}}
-    {{#if isOwner p}}
-      {{>showprofile person=p}}<hr>
-    {{/if}}
-  {{/if}}
+    {{#if currentUser}}
+      {{#if isOwner p}}
+        {{>showprofile person=p}}<hr>
+        {{/if}}
+      {{/if}}
   {{/each}}
     <a href="/addfriends">Here to connect with more friends</a>
-
-
   {{else}}
   <div class="jumbotron">
   <h1>Please create your account and log in</h1>

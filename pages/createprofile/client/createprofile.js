@@ -1,5 +1,5 @@
 Template.showpeople.helpers({
-  personlist() {return AllUsers.find()},
+  peoplelist() {return AllUsers.find()},
 })
 
 Template.userInfo.events({
