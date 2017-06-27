@@ -13,19 +13,15 @@ Template.friendrow.events({
     instance.$('#username').val("");
     instance.$('#age').val("");
     instance.$('#vehicle').val("");
-    Friends.insert({username:username,age:age,havevehicle12345:havevehicle,
-    owner:Meteor.userId(), createAt:new Date()});
-    
 
-    /*var friends =
+    var friends =
       {username:username,
        age:age,
        havevehicle12345:havevehicle,
        owner:Meteor.userId(),
         createAt:new Date()}
-    Meteor.call('friends.insert',friends);*/
-  },
-
+    Meteor.call('friends.insert',friends);
+  }
 })
 
 Template.showpeople.helpers({
@@ -48,14 +44,27 @@ Template.personrow.events({
     }else{
       new_value = "yes";
     }
-    Friends.update(this.person._id,{$set: {
-        havevehicle12345:new_value
-    }})
+    Meteor.call('friends.updateVehicle', this.person._id, new_value)
   },
+
+  'click #updatename'(elt,instance){
+    const name=instance.$('#usernameUpdate').val();
+    console.log('modifying '+name);
+    instance.$('#usernameUpdate').val("");
+    Meteor.call('friends.updateName', this.person._id, name)
+  },
+
+  'click #updateage'(elt,instance){
+    const age=instance.$('#ageUpdate').val();
+    console.log('modifying '+age);
+    instance.$('#ageUpdate').val("");
+    Meteor.call('friends.updateAge', this.person._id, age)
+  },
+
   'click #erase'(elt,instance){
     console.dir(this);
     console.log(this.person._id);
-    //Meteor.call('friends.remove',this.person);
-    Friends.remove(this.person._id);
+    Meteor.call('friends.remove',this.person);
+    //Friends.remove(this.person._id);
   }
 })

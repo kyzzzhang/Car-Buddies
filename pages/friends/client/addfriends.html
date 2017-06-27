@@ -1,9 +1,9 @@
 <template name="addfriends">
-  <div class="jumbotron">
+  <div class="jumbotron friendsPage">
     <h1>Here to connect with friends</h1>
-  </div>
     {{> morefriends}}
     {{> showpeople}}
+  </div>
 </template>
 
 <template name="morefriends">
@@ -27,7 +27,7 @@
 </template>
 
 <template name="showpeople">
-  <div>
+  <div class="showfriends">
   <p><strong>Your Friends</strong></p>
   <ul>
   {{#each p in peoplelist}}
@@ -44,7 +44,8 @@
 </template>
 
 <template name="personrow">
-  {{person.username}} - {{person.havevehicle12345}} - {{person.age}}
-  <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="star" aria-hidden="true">update</span>
+  <strong>{{person.username}}</strong> <input size=15 type="text" id="usernameUpdate"> <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updatename" aria-hidden="true">update</span>
+  - {{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="star" aria-hidden="true">update</span>
+  - {{person.age}} <input size=6 type="text" id="ageUpdate"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateage" aria-hidden="true">update</span>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase" aria-hidden="true">delete</span>
 </template>

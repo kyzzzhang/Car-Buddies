@@ -1,32 +1,29 @@
 <template name="userInfo">
   <head>
   <style>
-  p.sansserif {
-      font-family: Arial, Helvetica, sans-serif;
-  }
   .button {
-    background-color: yellow;
+    background-color: #f45c42;
     color: black;
-    border:1.1px solid #555555;
+    border:1.5px solid #174675;
   }
   </style>
   </head>
 
 
   <body>
-  {{#if currentUser}}
-  <div class="jumbotron">
-  <h1>Welcome to your Car Buddies</h1>
-  </div>
-  <h3>Update Your Profile</h3>
-  {{>createprofile}}
-  {{> showuser}}
-    <a href="/addfriends">Here to connect with more friends</a>
-  {{else}}
-  <div class="jumbotron">
-  <h1>Please create your account and log in</h1>
-  </div>
-  {{/if}}
+  <div id="profile">
+    {{#if currentUser}}
+      <h1>Welcome to your Car Buddies</h1>
+      <h3>Update Your Profile</h3>
+      {{>createprofile}}
+      {{> showuser}}
+      <a href="/addfriends">Here to connect with more friends</a>
+      {{else}}
+      <div>
+        <h1>Please create your account and log in</h1>
+      </div>
+      {{/if}}
+    </div>
   </body>
 </template>
 
@@ -36,50 +33,41 @@
     {{#if currentUser}}
       {{#if isOwner p}}
         {{>showprofile person=p}}<hr>
-        {{/if}}
       {{/if}}
+    {{/if}}
   {{/each}}
 </template>
 
 
 <template name="createprofile">
-  <form>
-  <div>
-    <label for="id">Start Date</label>
-    <input id="thedate" type="date"> <br>
-  </div>
-  <div class="form-group">
-    <label for="id">Name</label>
-    <input type="name" class="form-control" id="name" placeholder="Name">
-    <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="tree" aria-hidden="true">update</span>
-  </div>
-  <div>
-  <label for="id">Gender</label><br>
+    <p><strong>Start Date</strong></p>
+    <input id="thedate" type="date"> <hr>
+    <p><strong>Name</strong></p>
+    <input type="text" class="form-control" id="name" placeholder="Name">
+  <hr>
+  <p><strong>Gender</strong></p>
   <input type="radio" name="gender" value="male" checked> Male<br>
   <input type="radio" name="gender" value="female"> Female<br>
   <input type="radio" name="gender" value="other"> Other
-  </div>
-  <div>
-  <label for="options">Vehicle</label>
+  <hr>
+  <p><strong>Vehicle</strong></p>
   <select class="form-control" id="vehicle">
     <option>yes</option>
     <option>no</option>
   </select>
-  </div>
-  <div class="form-group">
-    <label for="career">What's Your Career</label>
+  <hr>
+      <p><strong>What's Your Career</strong></p>
     <input type="text" class="form-control" id="career" placeholder="Career">
-  </div>
-  <div class="form-group">
-    <label for="otherInfo">Want your Car Buddy to learn more about you?</label>
-    <textarea  rows="3" cols="20" placeholder="I'm cute"></textarea>
-  </div>
-  <button type="submit" class="btn button btn btn-xs" id="submitProfile">Submit</button>
-  </form>
+  <hr>
+      <p><strong>Want your Car Buddy to learn more about you?</strong></p>
+    <textarea  rows="3" cols="50" placeholder="I'm cute"></textarea>
+  <hr>
+  <button type="submit" class="btn button btn btn-lg" id="submitnow">Submit</button>
 </template>
 
 <template name="showprofile">
-  {{person.username}} {{person.career}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="tree2" aria-hidden="true">update</span>
+  {{person.name}} {{person.career}} {{person.gender}}
   <br>
   {{person.otherinfo}}
+  <span class="glyphicon glyphicon glyphicon-erase" id="erase2" aria-hidden="true">delete</span>
 </template>

@@ -1,0 +1,195 @@
+html {
+	margin: 0;
+	padding: 0;
+	}
+body {
+
+}
+
+* {
+    box-sizing: border-box;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+.header {
+    background-color: #9933cc;
+    color: #ffffff;
+    padding: 15px;
+}
+.first {
+	background-color: #edef8d;
+	padding:10px;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #a6c5ea;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #8ba4c1;
+}
+.aside {
+    background-color: #a6c5ea;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 40%;}
+.col-4 {width: 20%;}
+.col-5 {width: 40%;}
+.col-6 {width: 10%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 15%;}
+.col-11 {width: 10%;}
+.col-12 {width: 10%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+
+
+
+
+#profile{
+	background-image:url("images/night.jpg");
+	background-size:initial;
+}
+#profile h1{
+	color:white;
+	font-family: fantasy;
+}
+#profile h3{
+	color:white;
+	font-family: cursive;
+}
+#profile p{
+	color:white;
+	font-family: monospace;
+}
+
+.friendsPage{
+	background-image: url("images/haizei4.jpg");
+	background-size:auto;
+}
+
+.friendsPage h1{
+	color:#ffe066;
+	font-family:Blippo, fantasy;
+}
+
+ul li a {
+    color: #eaed47;
+    text-decoration: none;
+    padding: 3px;
+    display: block;
+}
+
+.flex {
+        /* basic styling */
+        width: 500px;
+        height: 350px;
+        border: 2px solid #555;
+        font: 14px Arial;
+
+        /* flexbox setup */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex > div {
+        flex: 1 1 auto;
+        width: 50px; /* To make the transition work nicely. (Transitions to/from
+                        "width:auto" are buggy in Gecko and Webkit, at least.
+                        See http://bugzil.la/731886 for more info.) */
+        transition: width 0.7s ease-out;
+    }
+
+    /* colors */
+    .flex > div:nth-child(1){ background: #d7a9f2; }
+		.flex > div:nth-child(2){ background: #f2ca9d; }
+    .flex > div:nth-child(3){ background: #f19c9c; }
+
+    .flex > div:hover {
+        width: 200px;
+    }
+
+
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+    text-align: center;
+    padding: 5px;
+}
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 15px;
+}
+
+.traveler{
+	background-image: url("images/kenting2.JPG");
+	height: 100%;
+  background-size: cover;
+}
+.traveler h1{
+	color:white;
+	font-family: cursive;
+
+}
+
+.showfriends p{
+	font-style: Comic Sans MS, Comic Sans, cursive;
+}
+
+a:link {
+	font-weight: bold;
+	text-decoration: none;
+	color: #212323;
+	}
+a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	color: #455959;
+	}
+a:hover, a:focus, a:active {
+	text-decoration: underline;
+	color: #ff99bb;
+	}
