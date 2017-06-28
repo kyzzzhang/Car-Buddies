@@ -1,5 +1,5 @@
 <template name="sponsors">
-
+<div class="sponsor">
 	<h1>We wish we had these sponsors!</h1>
 	<table class="table table-condensed">
 		<thead>
@@ -11,16 +11,17 @@
 		<tbody>
 			{{#each s in sponsorData}}
 			<tr>
-				<td>{{s.name}}</td>
-				<td>{{s.amt}}</td>
+				<td><strong>{{s.name}}</strong></td>
+				<td><strong>{{s.amt}}</strong></td>
 			</tr>
 			{{/each}}
 		</tbody>
 		<tfoot>
 			<tr>
-				<td>Sum</td>
-				<td>Each Dollar has infinite value</td>
+				<td><strong>Sum</strong></td>
+				<td><strong>Each Dollar has infinite value</strong></td>
 			</tr>
 		</tfoot>
 	</table>
+</div>
 </template>

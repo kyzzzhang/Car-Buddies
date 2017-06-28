@@ -46,9 +46,9 @@
     <input type="text" class="form-control" id="name" placeholder="Name">
   <hr>
   <p><strong>Gender</strong></p>
-  <input type="radio" name="gender" value="male" checked> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="other"> Other
+  <input type="radio" name="gender" id="male" checked> Male<br>
+  <input type="radio" name="gender" id="female"> Female<br>
+  <input type="radio" name="gender" id="other"> Other
   <hr>
   <p><strong>Vehicle</strong></p>
   <select class="form-control" id="vehicle">
@@ -60,14 +60,18 @@
     <input type="text" class="form-control" id="career" placeholder="Career">
   <hr>
       <p><strong>Want your Car Buddy to learn more about you?</strong></p>
-    <textarea  rows="3" cols="50" placeholder="I'm cute"></textarea>
+    <textarea row=3 col=50  type="text" class="form-control" id="otherinfo" placeholder="I'm cute"></textarea>
   <hr>
   <button type="submit" class="btn button btn btn-lg" id="submitnow">Submit</button>
 </template>
 
 <template name="showprofile">
-  {{person.name}} {{person.career}} {{person.gender}}
-  <br>
-  {{person.otherinfo}}
+  <div class="profileprint">
+  <p>name:{{person.name}}  <input size=15 type="text" id="usernameUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateUsername1" aria-hidden="true">update</span><br>
+     career:{{person.career}}<br>
+     vehicle:{{person.havevehicle12345}}<br>
+     gender:{{person.gender}}<br>
+     otherinfo:{{person.otherinfo}}</p>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase2" aria-hidden="true">delete</span>
+  </div>
 </template>
