@@ -1,0 +1,4 @@
+Aileen:
+This app looks nice. The modified version of background looks better and more clear than before.
+The create profile page works great. And if you can print out the friend list on adding friend page
+it will be better.
