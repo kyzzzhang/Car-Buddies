@@ -1,70 +1,54 @@
-Template.showpeople.helpers({
-  peoplelist() {return Friends.find()},
+Template.friendrow.onCreated(function(){
+  //create a reactive dict for this Template
+  this.friendrowDict = new ReactiveDict();
 })
 
 Template.friendrow.events({
   'click #submit_info': function(elt,instance) {
     event.preventDefault();
     const username=instance.$('#username').val();
-    const age=instance.$('#age').val();
-    const havevehicle=instance.$('#vehicle').val();
-    const actualage=parseInt(age);
-    console.log('adding '+username);
+    console.log('searching '+username);
     instance.$('#username').val("");
-    instance.$('#age').val("");
-    instance.$('#vehicle').val("");
 
-    var friends =
-      {username:username,
-       age:age,
-       havevehicle12345:havevehicle,
-       owner:Meteor.userId(),
-        createAt:new Date()}
-    Meteor.call('friends.insert',friends);
-  }
-})
+    const friendrowDict = Template.instance().friendrowDict;
+    Meteor.call('user.search',username, function(err,result){
+      if(err){
+        window.alert(err);
+        return;
+      }
 
-Template.showpeople.helpers({
-  isOwner(person){
-    console.dir(person);
-    return person.owner==Meteor.userId();
-  }
-})
-
-
-Template.personrow.events({
-  'click #star'(elt,instance) {
-    console.dir(this);
-    console.log(this.person._id);
-    //get vehicle
-    const vehicle = this.person.havevehicle12345;
-    var new_value = "";
-    if(vehicle === "yes"){
-      new_value = "no";
-    }else{
-      new_value = "yes";
+      if(result.length==0){
+        window.alert("No such user.....");
+      }else{
+        friendrowDict.set("userlist", result);
+      }
+    });
+  },
+  'click #addfriends_submit':function(elt,instance){
+    friendlist = instance.$(".user_checkbox:checked");
+    const friends_list=[];
+      for(var i=0; i<friendlist.length; i++){
+        userId=($($(".user_checkbox:checked")[i]).attr("user-id"));
+        friends_list.push(userId);
     }
-    Meteor.call('friends.updateVehicle', this.person._id, new_value)
-  },
-
-  'click #updatename'(elt,instance){
-    const name=instance.$('#usernameUpdate').val();
-    console.log('modifying '+name);
-    instance.$('#usernameUpdate').val("");
-    Meteor.call('friends.updateName', this.person._id, name)
-  },
-
-  'click #updateage'(elt,instance){
-    const age=instance.$('#ageUpdate').val();
-    console.log('modifying '+age);
-    instance.$('#ageUpdate').val("");
-    Meteor.call('friends.updateAge', this.person._id, age)
-  },
-
-  'click #erase'(elt,instance){
-    console.dir(this);
-    console.log(this.person._id);
-    Meteor.call('friends.remove',this.person);
-    //Friends.remove(this.person._id);
+    console.log(friends_list);
+    Meteor.call('user.addfriendlist',friends_list, function(err,result){
+      if(err){
+        window.alert(err);
+        return;
+      }
+    });
   }
+})
+
+Template.friendrow.helpers({
+  "userlist": function(){
+    return Template.instance().friendrowDict.get("userlist");
+  }
+})
+
+
+
+Template.personrow.onCreated(function(){
+  Meteor.subscribe("friends");
 })

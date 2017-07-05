@@ -3,8 +3,8 @@ html {
 	padding: 0;
 	}
 body {
-	background-image: url("images/background3.jpg");
-	background-size: 50% 160%;
+	background-color: black;
+	background-size: cover;
 }
 .about{
 	background-image: url("images/background2.jpg");
@@ -21,7 +21,7 @@ body {
     box-sizing: border-box;
 }
 .sponsor{
-	background-image: url("images/sponsor3.jpg");
+	background-image: url("images/background9.jpg");
 	background-size: 100% 100%;
 	position:absolute;
 	width:90%;
@@ -207,9 +207,9 @@ ul li a {
     }
 
     /* colors */
-    .flex > div:nth-child(1){ background: #d7a9f2; }
-		.flex > div:nth-child(2){ background: #f2ca9d; }
-    .flex > div:nth-child(3){ background: #f19c9c; }
+    .flex > div:nth-child(1){ background-image: url("images/mememe.JPG"); background-size: 100% 100%;}
+		.flex > div:nth-child(2){ background:  url("images/hickey-apr08.gif");background-size: 100% 100%;}
+    .flex > div:nth-child(3){ color:white;background-image: url("images/Brandeis.JPG"); background-size: 100% 100%;}
 
     .flex > div:hover {
         width: 200px;
@@ -244,10 +244,10 @@ p {
 }
 
 .traveler{
-	background-image: url("images/cardrawing.jpg");
-	background-size:50% 50%;
+	background-image: url("images/background8.jpg");
+	background-size:100% 100%;
 	position:absolute;
-	width:90%;
+	width:89% ;
 	height:100%;
 	margin:0;
 	padding:0;
@@ -268,14 +268,108 @@ p {
 a:link {
 	font-weight: bold;
 	text-decoration: none;
-	color: #212323;
+	color: #f4e435;
 	}
 a:visited {
 	font-weight: bold;
 	text-decoration: none;
-	color: #455959;
+	color: #b39eed;
 	}
 a:hover, a:focus, a:active {
 	text-decoration: underline;
 	color: #ff99bb;
 	}
+
+
+	.slideshow-container {
+	  max-width: 1000px;
+	  position: relative;
+	  margin: auto;
+	}
+
+	.mySlides {
+	    display: none;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 50%;
+	  width: auto;
+	  margin-top: -22px;
+	  padding: 16px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 18px;
+	  transition: 0.6s ease;
+	  border-radius: 0 3px 3px 0;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+	  right: 0;
+	  border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+	  background-color: rgba(0,0,0,0.8);
+	}
+
+	/* Caption text */
+	.text {
+	  color: #f2f2f2;
+	  font-size: 15px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  bottom: 8px;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	  cursor:pointer;
+	  height: 13px;
+	  width: 13px;
+	  margin: 0 2px;
+	  background-color: #bbb;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.6s ease;
+	}
+
+	.active, .dot:hover {
+	  background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+	  -webkit-animation-name: fade;
+	  -webkit-animation-duration: 1.5s;
+	  animation-name: fade;
+	  animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+	  from {opacity: .4}
+	  to {opacity: 1}
+	}
+
+	@keyframes fade {
+	  from {opacity: .4}
+	  to {opacity: 1}
+	}
+.profileprint p{
+	color:yellow;
+}

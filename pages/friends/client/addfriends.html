@@ -2,7 +2,7 @@
   <div class="jumbotron friendsPage">
     <h1>Here to connect with friends</h1>
     {{> morefriends}}
-    {{> showpeople}}
+    {{> userlistrow}}
   </div>
 </template>
 
@@ -12,39 +12,46 @@
 </template>
 
 <template name="friendrow">
-  <strong>UserName</strong>:<input type="text" id="username"><hr>
-  <strong>Age</strong>:<input type="text" id="age"><hr>
-  <div>
-  <label for="options">Vehicle</label>
-  <select class="form-control" id="vehicle">
-    <option>yes</option>
-    <option>no</option>
-  </select>
-  </div>
-  <hr>
-  <button type="submit" class="btn button btn-primary btn-lg" id="submit_info">Add New Friend!
+  <strong>UserName</strong>:<input type="text" id="username">
+  <button type="submit" class="btn button btn-primary btn-lg" id="submit_info">Search!!
   </button><hr>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+				<th>Username</th>
+				<th>Gender</th>
+        <th>Career</th>
+        <th></th>
+			</tr>
+    </thead>
+    <tbody>
+      {{#each p in userlist}}
+       {{> userlistrow p=p}}
+      {{/each}}
+    </tbody>
+  </table>
+  <button type="submit" class="btn button btn-primary btn-lg" id="addfriends_submit">Add Friends!!!!! </button>
 </template>
 
-<template name="showpeople">
+<template name="userlistrow">
+  <tr>
+    <td>{{p.name}}</td>
+    <td>{{p.gender}}</td>
+    <td>{{p.career}}</td>
+    <td><input type="checkbox" name="selectFriends" class="user_checkbox" user-id="{{p._id}}"></td>
+  </tr>
   <div class="showfriends">
-  <p><strong>Your Friends</strong></p>
+  <strong>Your Friends</strong>
   <ul>
-  {{#each p in peoplelist}}
-  {{#if currentUser}}
-    {{#if isOwner p}}
+  {{#each p in alllist}}
       <li>{{>personrow person=p}}</li>
-    {{/if}}
-  {{else}}
-  <h1>Please log in to see all your friends</h1>
-  {{/if}}
   {{/each}}
   </ul>
   </div>
 </template>
 
 <template name="personrow">
-  <strong>{{person.username}}</strong> <input size=15 type="text" id="usernameUpdate"> <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updatename" aria-hidden="true">update</span>
+  <strong>{{person.name}}</strong> <input size=15 type="text" id="usernameUpdate"> <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updatename" aria-hidden="true">update</span>
   - {{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="star" aria-hidden="true">update</span>
   - {{person.age}} <input size=6 type="text" id="ageUpdate"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateage" aria-hidden="true">update</span>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase" aria-hidden="true">delete</span>

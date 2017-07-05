@@ -17,6 +17,7 @@ Template.createprofile.events({
     };
     const havevehicle=instance.$('#vehicle').val();
     const otherinfo=instance.$('#otherinfo').val();
+    friend_list = [];
     console.log('adding '+name);
     instance.$('#name').val("");
     instance.$('#career').val("");
@@ -30,17 +31,22 @@ Template.createprofile.events({
        gender:gender,
        havevehicle12345:havevehicle,
        otherinfo:otherinfo,
-       owner:Meteor.userId(),
+       userId:Meteor.userId(),
+       friend_list:friend_list,
       createAt:new Date()
     }
-
-    Meteor.call('newuser.insert',newUser);
+    Meteor.call('newuser.insert',newUser, function(err, result){
+      if(err){
+        window.alert(err);
+        return;
+      }
+    });
   }})
 
   Template.showuser.helpers({
     isOwner(person){
       console.dir(person);
-      return person.owner==Meteor.userId();
+      return person.userId==Meteor.userId();
     }
   })
 
@@ -49,7 +55,7 @@ Template.showprofile.events({
     console.dir(this);
     console.log(this.person._id);
     Meteor.call('newuser.remove',this.person);
-  }
+  },
   'click #updateUsername1'(elt,instance){
     const name=instance.$('#usernameUpdate1').val();
     console.log('modifying '+name);
@@ -57,3 +63,6 @@ Template.showprofile.events({
     Meteor.call('allusers.updateName', this.person._id, name)
   },
 })
+Template.showprofile.onCreated(function(){
+  Meteor.subscribe("allusers");
+} )
