@@ -40,14 +40,23 @@
     <td>{{p.career}}</td>
     <td><input type="checkbox" name="selectFriends" class="user_checkbox" user-id="{{p._id}}"></td>
   </tr>
+</template>
+
+<!--<template name="getfriend">
   <div class="showfriends">
   <strong>Your Friends</strong>
-  <ul>
-  {{#each p in alllist}}
-      <li>{{>personrow person=p}}</li>
+  {{#each p in currentuser}}
+    {{#if currentUser}}
+      {{#if isOwner p}}
+        {{>getuserfriendlist person=p}}<hr>
+      {{/if}}
+    {{/if}}
   {{/each}}
-  </ul>
   </div>
+</template>
+
+<template name="getuserfriendlist">
+
 </template>
 
 <template name="personrow">
@@ -55,4 +64,4 @@
   - {{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="star" aria-hidden="true">update</span>
   - {{person.age}} <input size=6 type="text" id="ageUpdate"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateage" aria-hidden="true">update</span>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase" aria-hidden="true">delete</span>
-</template>
+</template>--> 

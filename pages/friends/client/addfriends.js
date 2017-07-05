@@ -1,3 +1,34 @@
+/*Template.getfriend.helpers({
+  currentuser() {return AllUsers.find()},
+})
+
+Template.getuserfriendlist.helpers({
+  getfriend(userId){
+
+    /*Meteor.call('friend.search',userId, function(err,result){
+      if(err){
+        window.alert(err);
+      return;
+    }
+
+    getuserfriendlistDict.set("friendlist", result);
+
+  })
+
+  }
+})
+
+Template.getuserfriendlist.onCreated(function(){
+  //create a reactive dict for this Template
+  this.getuserfriendlistDict = new ReactiveDict();
+})*/
+
+Template.friendrow.helpers({
+  "friendlist": function(){
+    return Template.instance().getuserfriendlistDict.get("friendlist");
+  }
+})
+
 Template.friendrow.onCreated(function(){
   //create a reactive dict for this Template
   this.friendrowDict = new ReactiveDict();
@@ -49,6 +80,7 @@ Template.friendrow.helpers({
 
 
 
-Template.personrow.onCreated(function(){
+/*Template.personrow.onCreated(function(){
   Meteor.subscribe("friends");
 })
+*/
