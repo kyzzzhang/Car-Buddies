@@ -46,17 +46,31 @@
 <template name="getfriend">
   <div class="showfriends">
   <strong>Your Friends</strong><hr>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Vehicle</th>
+      <th>ExtraInfo</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
   {{#each p in currentuser}}
-      {{>personrow person=p}}<hr>
+      {{>personrow person=p}}
   {{/each}}
+  </tbody>
+  </table>
   </div>
 </template>
 
 
 
 <template name="personrow">
-  <strong>{{person.name}}</strong> <input size=15 type="text" id="usernameUpdate"> <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updatename" aria-hidden="true">update</span>
-  - {{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="star" aria-hidden="true">update</span>
-  - {{person.otherinfo}} <input size=6 type="text" id="ageUpdate"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateage" aria-hidden="true">update</span>
-  <span class="glyphicon glyphicon glyphicon-erase" id="erase" aria-hidden="true">delete</span>
+  <tr>
+  <td><strong>{{person.name}}</strong></td>
+  <td><strong>{{person.havevehicle12345}}</strong></td>
+  <td><strong>{{person.otherinfo}}</strong></td>
+  <td><span class="glyphicon glyphicon glyphicon-erase" id="delete_friend" aria-hidden="true">delete</span></td>
+  </tr>
 </template>

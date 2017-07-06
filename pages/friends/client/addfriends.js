@@ -70,7 +70,22 @@ Template.friendrow.helpers({
   }
 })
 
-
+Template.personrow.events({
+  'click #delete_friend':function(elt,instance){
+    var id = Meteor.userId();
+    var allfriends = AllUsers.findOne({userId: id}, {fields: {friend_list: 1} }).friend_list;
+    console.dir(this);
+    console.log(this.person._id);
+    const newlist=[];
+    for(var i=0;i<allfriends.length;i++){
+      if(allfriends[i]!==this.person._id){
+        newlist.push(allfriends[i]);
+      }
+    }
+    console.log(newlist);
+    Meteor.call('friends.remove',newlist);
+  }
+})
 
 Template.personrow.onCreated(function(){
   Meteor.subscribe("allfriends");
