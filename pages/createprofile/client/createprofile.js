@@ -2,6 +2,8 @@ Template.showuser.helpers({
   peoplelist() {return AllUsers.find()},
 })
 
+
+
 Template.createprofile.events({
   'click #submitnow':function(elt,instance) {
     event.preventDefault();

@@ -1,27 +1,17 @@
-/*Template.getfriend.helpers({
-  currentuser() {return AllUsers.find()},
-})
-
-Template.getuserfriendlist.helpers({
-  getfriend(userId){
-
-    /*Meteor.call('friend.search',userId, function(err,result){
-      if(err){
-        window.alert(err);
-      return;
+Template.getfriend.helpers({
+  "currentuser": function(){
+    var id = Meteor.userId();
+    var allfriends = AllUsers.findOne({userId: id}, {fields: {friend_list: 1} }).friend_list;
+    const friendlist=[];
+    for(var i=0;i<allfriends.length;i++){
+      var newfriend=AllUsers.findOne({_id: allfriends[i]});
+      friendlist.push(newfriend);
     }
-
-    getuserfriendlistDict.set("friendlist", result);
-
-  })
-
-  }
+    //console.log(friendlist);
+    return friendlist;
+    },
 })
 
-Template.getuserfriendlist.onCreated(function(){
-  //create a reactive dict for this Template
-  this.getuserfriendlistDict = new ReactiveDict();
-})*/
 
 Template.friendrow.helpers({
   "friendlist": function(){
@@ -32,6 +22,7 @@ Template.friendrow.helpers({
 Template.friendrow.onCreated(function(){
   //create a reactive dict for this Template
   this.friendrowDict = new ReactiveDict();
+
 })
 
 Template.friendrow.events({
@@ -60,6 +51,7 @@ Template.friendrow.events({
     const friends_list=[];
       for(var i=0; i<friendlist.length; i++){
         userId=($($(".user_checkbox:checked")[i]).attr("user-id"));
+        console.log("userId is"+userId);
         friends_list.push(userId);
     }
     console.log(friends_list);
@@ -80,7 +72,6 @@ Template.friendrow.helpers({
 
 
 
-/*Template.personrow.onCreated(function(){
-  Meteor.subscribe("friends");
+Template.personrow.onCreated(function(){
+  Meteor.subscribe("allfriends");
 })
-*/

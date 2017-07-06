@@ -3,6 +3,7 @@
     <h1>Here to connect with friends</h1>
     {{> morefriends}}
     {{> userlistrow}}
+    {{> getfriend}}
   </div>
 </template>
 
@@ -42,26 +43,20 @@
   </tr>
 </template>
 
-<!--<template name="getfriend">
+<template name="getfriend">
   <div class="showfriends">
-  <strong>Your Friends</strong>
+  <strong>Your Friends</strong><hr>
   {{#each p in currentuser}}
-    {{#if currentUser}}
-      {{#if isOwner p}}
-        {{>getuserfriendlist person=p}}<hr>
-      {{/if}}
-    {{/if}}
+      {{>personrow person=p}}<hr>
   {{/each}}
   </div>
 </template>
 
-<template name="getuserfriendlist">
 
-</template>
 
 <template name="personrow">
   <strong>{{person.name}}</strong> <input size=15 type="text" id="usernameUpdate"> <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updatename" aria-hidden="true">update</span>
   - {{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="star" aria-hidden="true">update</span>
-  - {{person.age}} <input size=6 type="text" id="ageUpdate"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateage" aria-hidden="true">update</span>
+  - {{person.otherinfo}} <input size=6 type="text" id="ageUpdate"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateage" aria-hidden="true">update</span>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase" aria-hidden="true">delete</span>
-</template>--> 
+</template>
