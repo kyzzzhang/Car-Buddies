@@ -59,11 +59,37 @@ Template.showprofile.events({
     Meteor.call('newuser.remove',this.person);
   },
   'click #updateUsername1'(elt,instance){
+    $('.newname').css("display","block");
     const name=instance.$('#usernameUpdate1').val();
     console.log('modifying '+name);
     instance.$('#usernameUpdate1').val("");
     Meteor.call('allusers.updateName', this.person._id, name)
   },
+  'click #updateCareer1'(elt,instance){
+    const career=instance.$('#careerUpdate1').val();
+    console.log('modifying '+career);
+    instance.$('#careerUpdate1').val("");
+    Meteor.call('allusers.updateCareer', this.person._id, career)
+  },
+  'click #updateVehicle1'(elt,instance) {
+    console.dir(this);
+    console.log(this.person._id);
+    //get vehicle
+    const vehicle = this.person.havevehicle12345;
+    var new_value = "";
+    if(vehicle === "yes"){
+      new_value = "no";
+    }else{
+      new_value = "yes";
+    }
+    Meteor.call('allusers.updateVehicle',this.person._id,new_value)
+  },
+  'click #updateotherinfo1'(elt,instance){
+    const otherinfo=instance.$('#otherinfoUpdate1').val();
+    console.log('modifying '+otherinfo);
+    instance.$('#otherinfoUpdate1').val("");
+    Meteor.call('allusers.updateOtherinfo',this.person._id,otherinfo)
+  }
 })
 Template.showprofile.onCreated(function(){
   Meteor.subscribe("allusers");

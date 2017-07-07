@@ -67,11 +67,18 @@
 
 <template name="showprofile">
   <div class="profileprint">
-  <p>name:{{person.name}}  <input type="text" id="usernameUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateUsername1" aria-hidden="true">update</span><br>
-     career:{{person.career}}<br>
-     vehicle:{{person.havevehicle12345}}<br>
+  <p>name:{{person.name}}<button class="edit" onclick="document.getElementById('newname').style.display='block'">Edit</button>
+     <div id="newname" class="modal">  <input type="text" id="usernameUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newname').style.display='none'"
+       id="updateUsername1" aria-hidden="true">updateName</span></div><br>
+
+     career:{{person.career}} <button class="edit" onclick="document.getElementById('newcareer').style.display='block'">Edit</button>
+     <div id="newcareer" class="modal"><input type="text" id="careerUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous"  onclick="document.getElementById('newcareer').style.display='none'" id="updateCareer1" aria-hidden="true">updateCareer</span></div><br>
+
+     vehicle:{{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateVehicle1" aria-hidden="true">update</span><br>
+
      gender:{{person.gender}}<br>
-     otherinfo:{{person.otherinfo}}</p>
+
+     otherinfo:{{person.otherinfo}}<input type="text" id="otherinfoUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateotherinfo1" aria-hidden="true">update</span></p>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase2" aria-hidden="true">delete</span>
   </div>
 </template>

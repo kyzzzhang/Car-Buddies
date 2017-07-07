@@ -165,7 +165,7 @@ input[type=text]:focus {
 	font-family: cursive;
 }
 #profile p{
-	color:white;
+	color:yellow;
 	font-family: monospace;
 }
 
@@ -373,3 +373,10 @@ a:hover, a:focus, a:active {
 .profileprint p{
 	color:yellow;
 }
+.edit{
+	color:blue;
+}
+
+	#newname {
+		display:"none";
+		}
