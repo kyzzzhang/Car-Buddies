@@ -78,7 +78,8 @@
 
      gender:{{person.gender}}<br>
 
-     otherinfo:{{person.otherinfo}}<input type="text" id="otherinfoUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateotherinfo1" aria-hidden="true">update</span></p>
+     otherinfo:{{person.otherinfo}}<button class="edit" onclick="document.getElementById('newotherinfo').style.display='block'">Edit</button>
+     <div id="newotherinfo" class="modal"><input type="text" id="otherinfoUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newotherinfo').style.display='none'"  id="updateotherinfo1" aria-hidden="true">update</span></div></p>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase2" aria-hidden="true">delete</span>
   </div>
 </template>
