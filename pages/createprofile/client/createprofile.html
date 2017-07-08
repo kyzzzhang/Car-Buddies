@@ -67,19 +67,21 @@
 
 <template name="showprofile">
   <div class="profileprint">
-  <p>name:{{person.name}}<button class="edit" onclick="document.getElementById('newname').style.display='block'">Edit</button>
-     <div id="newname" class="modal">  <input type="text" id="usernameUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newname').style.display='none'"
-       id="updateUsername1" aria-hidden="true">updateName</span></div><br>
+  <p>Name:{{person.name}} <button class="edit" onclick="document.getElementById('newname').style.display='block'">Edit</button></p>
+     <div id="newname" class="modal">  <input type="text" id="usernameUpdate1"><p><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newname').style.display='none'"
+       id="updateUsername1" aria-hidden="true">updateName</span></p></div>
 
-     career:{{person.career}} <button class="edit" onclick="document.getElementById('newcareer').style.display='block'">Edit</button>
-     <div id="newcareer" class="modal"><input type="text" id="careerUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous"  onclick="document.getElementById('newcareer').style.display='none'" id="updateCareer1" aria-hidden="true">updateCareer</span></div><br>
+    <p> Career:{{person.career}} <button class="edit" onclick="document.getElementById('newcareer').style.display='block'">Edit</button></p>
+     <div id="newcareer" class="modal"><input type="text" id="careerUpdate1"><p><span class="glyphicon glpyicon glyphicon-tree-deciduous"  onclick="document.getElementById('newcareer').style.display='none'"
+        id="updateCareer1" aria-hidden="true">updateCareer</span></p></div>
 
-     vehicle:{{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateVehicle1" aria-hidden="true">update</span><br>
+    <p> Vehicle:{{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateVehicle1" aria-hidden="true">update</span></p>
 
-     gender:{{person.gender}}<br>
+    <p> Gender:{{person.gender}}</p>
 
-     otherinfo:{{person.otherinfo}}<button class="edit" onclick="document.getElementById('newotherinfo').style.display='block'">Edit</button>
-     <div id="newotherinfo" class="modal"><input type="text" id="otherinfoUpdate1"><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newotherinfo').style.display='none'"  id="updateotherinfo1" aria-hidden="true">update</span></div></p>
+    <p> Otherinfo:{{person.otherinfo}} <button class="edit" onclick="document.getElementById('newotherinfo').style.display='block'">Edit</button></p>
+     <div id="newotherinfo" class="modal"><input type="text" id="otherinfoUpdate1"><p><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newotherinfo').style.display='none'"
+       id="updateotherinfo1" aria-hidden="true">update</span></p></div>
   <span class="glyphicon glyphicon glyphicon-erase" id="erase2" aria-hidden="true">delete</span>
   </div>
 </template>
