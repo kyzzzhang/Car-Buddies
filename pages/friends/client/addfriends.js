@@ -4,7 +4,7 @@ Template.getfriend.helpers({
     var allfriends = AllUsers.findOne({userId: id}, {fields: {friend_list: 1} }).friend_list;
     const friendlist=[];
     for(var i=0;i<allfriends.length;i++){
-      var newfriend=AllUsers.findOne({_id: allfriends[i]});
+      var newfriend=AllUsers.findOne({userId: allfriends[i]});
       friendlist.push(newfriend);
     }
     //console.log(friendlist);
@@ -74,11 +74,12 @@ Template.personrow.events({
   'click #delete_friend':function(elt,instance){
     var id = Meteor.userId();
     var allfriends = AllUsers.findOne({userId: id}, {fields: {friend_list: 1} }).friend_list;
-    console.dir(this);
-    console.log(this.person._id);
+    console.log(allfriends);
+    console.log(this);
+    console.log(this.person.userId);
     const newlist=[];
     for(var i=0;i<allfriends.length;i++){
-      if(allfriends[i]!==this.person._id){
+      if(allfriends[i]!==this.person.userId){
         newlist.push(allfriends[i]);
       }
     }

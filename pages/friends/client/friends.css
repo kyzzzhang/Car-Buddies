@@ -380,3 +380,9 @@ a:hover, a:focus, a:active {
 	#newname {
 		display:"none";
 		}
+.timeline h1{
+	color:white;
+}
+.post p{
+	color:white;
+}
