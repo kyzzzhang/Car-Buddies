@@ -1,5 +1,5 @@
 Meteor.startup(function(){
-	if (Pokedex.find().count()==0){
+	/*if (Pokedex.find().count()==0){
 		console.log("Importing Pokedex to db")
 
 			//Assets: access to anything in private
@@ -12,7 +12,7 @@ Meteor.startup(function(){
 					 Pokedex.insert(item);
 			 })
 			 console.log("Pokedex imported");
-	};
+	};*/
 
 // this is very insecure, but helpful for development
 	Meteor.publish('userList', function (){
