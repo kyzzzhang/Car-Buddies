@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-twbs:bootstrap
 iron:router
 sacha:spin
 accounts-password@1.4.0
@@ -33,3 +32,4 @@ dynamic-import@0.1.1
 semantic:ui
 less
 juliancwirko:postcss
+twbs:bootstrap

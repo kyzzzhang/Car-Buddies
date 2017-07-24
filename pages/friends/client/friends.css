@@ -6,33 +6,9 @@ body {
 	background-color: black;
 	background-size: cover;
 }
-.about{
-	background-image: url("images/background2.jpg");
-	background-size: cover;
-	position:absolute;
-	width:90%;
-	height:100%;
-	margin:0;
-	padding:0;
-	top: 55px;
- left: 70px;
-}
+
 * {
     box-sizing: border-box;
-}
-.sponsor{
-	background-image: url("images/background9.jpg");
-	background-size: 100% 100%;
-	position:absolute;
-	width:90%;
-	height:100%;
-	margin:0;
-	padding:0;
-	top: 55px;
- left: 70px;
-}
-.sponsor h1{
-	font-family: Comic Sans MS, Comic Sans, cursive;
 }
 .row::after {
     content: "";
@@ -53,27 +29,8 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
-.allhome h1{
-	color:white;
-	font-family: Courier, monospace;
-}
 
-.header h1{
-	color:white;
-	font-family: Comic Sans MS, Comic Sans, cursive;
-}
-.first {
-	padding:10px;
-}
-.first h3{
-	color:white;
-	font-family: Comic Sans MS, Comic Sans, cursive;
-}
-.first p{
-	color:#b3cccc;
-	font-size:120%;
-	font-family: Courier New, monospace;
-}
+
 .intro{
     border-radius: 25px;
     border: 2px solid #73AD21;
@@ -87,86 +44,6 @@ input[type=text]:focus {
     padding: 20px;
     width: 400px;
     height: 270px;
-}
-.second h2{
-	color:white;
-	font-family: Comic Sans MS, Comic Sans, cursive;
-}
-.second p{
-	color:#b3cccc;
-	font-size:120%;
-	font-family: Courier New, monospace;
-}
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.menu li {
-    padding: 8px;
-    margin-bottom: 7px;
-    background-color: #a6c5ea;
-    color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.menu li:hover {
-    background-color: #8ba4c1;
-}
-.aside {
-    background-color: #a6c5ea;
-    padding: 15px;
-    color: #ffffff;
-    text-align: center;
-    font-size: 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-/* For desktop: */
-.col-1 {width: 0%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 45%;}
-.col-4 {width: 40%;}
-.col-5 {width: 10%;}
-.col-6 {width: 40%;}
-.col-7 {width: 40%;}
-.col-8 {width: 10%;}
-.col-9 {width: 10%;}
-.col-10 {width: 15%;}
-.col-11 {width: 15%;}
-.col-12 {width: 10%;}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-}
-
-
-
-
-
-#profile{
-	background-image:url("images/background5.jpg");
-	background-size:50% 100%;
-	position:absolute;
-	width:90%;
-	height:160%;
-	margin:0;
-	padding:0;
-	top: 55px;
- left: 70px;
-}
-#profile h1{
-	color:white;
-	font-family: fantasy;
-}
-#profile h3{
-	color:white;
-	font-family: cursive;
-}
-#profile p{
-	color:yellow;
-	font-family: monospace;
 }
 
 .friendsPage{
@@ -184,38 +61,6 @@ ul li a {
     text-decoration: none;
     padding: 3px;
     display: block;
-}
-
-.flex {
-        /* basic styling */
-        width: 500px;
-        height: 350px;
-        border: 2px solid #555;
-        font: 14px Arial;
-
-        /* flexbox setup */
-        display: flex;
-        flex-direction: row;
-    }
-
-    .flex > div {
-        flex: 1 1 auto;
-        width: 50px; /* To make the transition work nicely. (Transitions to/from
-                        "width:auto" are buggy in Gecko and Webkit, at least.
-                        See http://bugzil.la/731886 for more info.) */
-        transition: width 0.7s ease-out;
-    }
-
-    /* colors */
-    .flex > div:nth-child(1){ background-image: url("images/mememe.JPG"); background-size: 100% 100%;}
-		.flex > div:nth-child(2){ background:  url("images/hickey-apr08.gif");background-size: 100% 100%;}
-    .flex > div:nth-child(3){ color:white;background-image: url("images/Brandeis.JPG"); background-size: 100% 100%;}
-
-    .flex > div:hover {
-        width: 200px;
-    }
-.profileprint p{
-	color : white;
 }
 
 
@@ -243,24 +88,6 @@ p {
     font-size: 15px;
 }
 
-.traveler{
-	background-image: url("images/background8.jpg");
-	background-size:100% 100%;
-	position:absolute;
-	width:89% ;
-	height:100%;
-	margin:0;
-	padding:0;
-	top: 55px;
- left: 70px;
-
-}
-.traveler h1{
-	color:black;
-	font-family: Comic Sans MS, Comic Sans, cursive;
-
-}
-
 .showfriends p{
 	font-style: Comic Sans MS, Comic Sans, cursive;
 }
@@ -279,110 +106,3 @@ a:hover, a:focus, a:active {
 	text-decoration: underline;
 	color: #ff99bb;
 	}
-
-
-	.slideshow-container {
-	  max-width: 1000px;
-	  position: relative;
-	  margin: auto;
-	}
-
-	.mySlides {
-	    display: none;
-	}
-
-	/* Next & previous buttons */
-	.prev, .next {
-	  cursor: pointer;
-	  position: absolute;
-	  top: 50%;
-	  width: auto;
-	  margin-top: -22px;
-	  padding: 16px;
-	  color: white;
-	  font-weight: bold;
-	  font-size: 18px;
-	  transition: 0.6s ease;
-	  border-radius: 0 3px 3px 0;
-	}
-
-	/* Position the "next button" to the right */
-	.next {
-	  right: 0;
-	  border-radius: 3px 0 0 3px;
-	}
-
-	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover, .next:hover {
-	  background-color: rgba(0,0,0,0.8);
-	}
-
-	/* Caption text */
-	.text {
-	  color: #f2f2f2;
-	  font-size: 15px;
-	  padding: 8px 12px;
-	  position: absolute;
-	  bottom: 8px;
-	  width: 100%;
-	  text-align: center;
-	}
-
-	/* Number text (1/3 etc) */
-	.numbertext {
-	  color: #f2f2f2;
-	  font-size: 12px;
-	  padding: 8px 12px;
-	  position: absolute;
-	  top: 0;
-	}
-
-	/* The dots/bullets/indicators */
-	.dot {
-	  cursor:pointer;
-	  height: 13px;
-	  width: 13px;
-	  margin: 0 2px;
-	  background-color: #bbb;
-	  border-radius: 50%;
-	  display: inline-block;
-	  transition: background-color 0.6s ease;
-	}
-
-	.active, .dot:hover {
-	  background-color: #717171;
-	}
-
-	/* Fading animation */
-	.fade {
-	  -webkit-animation-name: fade;
-	  -webkit-animation-duration: 1.5s;
-	  animation-name: fade;
-	  animation-duration: 1.5s;
-	}
-
-	@-webkit-keyframes fade {
-	  from {opacity: .4}
-	  to {opacity: 1}
-	}
-
-	@keyframes fade {
-	  from {opacity: .4}
-	  to {opacity: 1}
-	}
-.profileprint p{
-	color:yellow;
-}
-.edit{
-	color:blue;
-}
-
-	#newname {
-		display:"none";
-		}
-.timeline h1{
-	color:white;
-}
-.post p{
-	color:white;
-}

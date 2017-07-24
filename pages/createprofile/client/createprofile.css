@@ -1,0 +1,39 @@
+#profile{
+	background-image:url("images/background5.jpg");
+	background-size:50% 100%;
+	position:absolute;
+	width:90%;
+	height:160%;
+	margin:0;
+	padding:0;
+	top: 55px;
+ left: 70px;
+}
+#profile h1{
+	color:white;
+	font-family: fantasy;
+}
+#profile h3{
+	color:white;
+	font-family: cursive;
+}
+#profile p{
+	color:yellow;
+	font-family: monospace;
+}
+
+.profileprint p{
+	color:yellow;
+}
+
+#newname {
+	display:"none";
+}
+
+.edit{
+	color:blue;
+}
+
+.profileprint p{
+	color : white;
+}

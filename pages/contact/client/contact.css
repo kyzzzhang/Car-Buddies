@@ -1,0 +1,29 @@
+
+.flex {
+        /* basic styling */
+        width: 500px;
+        height: 350px;
+        border: 2px solid #555;
+        font: 14px Arial;
+
+        /* flexbox setup */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex > div {
+        flex: 1 1 auto;
+        width: 50px; /* To make the transition work nicely. (Transitions to/from
+                        "width:auto" are buggy in Gecko and Webkit, at least.
+                        See http://bugzil.la/731886 for more info.) */
+        transition: width 0.7s ease-out;
+    }
+
+    /* colors */
+    .flex > div:nth-child(1){ background-image: url("images/mememe.JPG"); background-size: 100% 100%;}
+		.flex > div:nth-child(2){ background:  url("images/hickey-apr08.gif");background-size: 100% 100%;}
+    .flex > div:nth-child(3){ color:white;background-image: url("images/Brandeis.JPG"); background-size: 100% 100%;}
+
+    .flex > div:hover {
+        width: 200px;
+    }

@@ -1,0 +1,63 @@
+/* For desktop: */
+.col-1 {width: 0%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 45%;}
+.col-4 {width: 40%;}
+.col-5 {width: 10%;}
+.col-6 {width: 40%;}
+.col-7 {width: 40%;}
+.col-8 {width: 10%;}
+.col-9 {width: 10%;}
+.col-10 {width: 15%;}
+.col-11 {width: 15%;}
+.col-12 {width: 10%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+
+
+
+.header h1{
+	color:white;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+.first {
+	padding:10px;
+}
+.first h3{
+	color:white;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+.first p{
+	color:#b3cccc;
+	font-size:120%;
+	font-family: Courier New, monospace;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #a6c5ea;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #8ba4c1;
+}
+.aside {
+    background-color: #a6c5ea;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
