@@ -4,6 +4,6 @@ Meteor.publish("allusers",function(){
 Meteor.publish("friends",function(){
   return Friends.find();
 }),
-Meteor.publish("posts",function(){
-  return Posts.find();
+Meteor.publish("timeline",function(){
+  return Timeline.find();
 })

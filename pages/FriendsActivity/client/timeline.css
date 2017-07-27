@@ -1,6 +1,9 @@
 .timeline h1{
 	color:white;
 }
-.post p{
+.showownpost p{
 	color:white;
+}
+#forumpost{
+	width: auto;
 }
