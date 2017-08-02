@@ -2,7 +2,6 @@
   <div class="jumbotron friendsPage">
     <h1>Here to connect with friends</h1>
     {{> morefriends}}
-    {{> userlistrow}}
     {{> getfriend}}
   </div>
 </template>
@@ -69,7 +68,7 @@
 <template name="personrow">
   <tr>
   <td><strong>{{person.name}}</strong></td>
-  <td><strong>{{person.havevehicle12345}}</strong></td>
+  <td><strong>{{person.vehicle}}</strong></td>
   <td><strong>{{person.otherinfo}}</strong></td>
   <td><span class="glyphicon glyphicon glyphicon-erase" id="delete_friend" aria-hidden="true">delete</span></td>
   </tr>

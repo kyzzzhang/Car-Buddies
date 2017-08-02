@@ -16,7 +16,7 @@
       <h1>Welcome to your Car Buddies</h1>
       <h3>Update Your Profile</h3>
       {{>createprofile}}
-      {{> showuser}}
+
       <a href="/addfriends">Here to connect with more friends</a>
       {{else}}
       <div>
@@ -40,6 +40,9 @@
 
 
 <template name="createprofile">
+  {{#if hasProfile}}
+  {{> showuser}}
+  {{else}}
     <p><strong>Start Date</strong></p>
     <input id="thedate" type="date"> <hr>
     <p><strong>Name</strong></p>
@@ -63,25 +66,51 @@
     <textarea row=3 col=50  type="text" class="form-control" id="otherinfo" placeholder="I'm cute"></textarea>
   <hr>
   <button type="submit" class="btn button btn btn-lg" id="submitnow">Submit</button>
+  {{/if}}
 </template>
 
 <template name="showprofile">
   <div class="profileprint">
-  <p>Name:{{person.name}} <button class="edit" onclick="document.getElementById('newname').style.display='block'">Edit</button></p>
-     <div id="newname" class="modal">  <input type="text" id="usernameUpdate1"><p><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newname').style.display='none'"
-       id="updateUsername1" aria-hidden="true">updateName</span></p></div>
+  <p>Name:{{person.name}}
+    <button class="edit" id="editname">Edit</button></p>
+     <div id="newname">
+        <input type="text" id="usernameUpdate1">
+        <p><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateUsername1" aria-hidden="true">updateName</span>
+        <span class="glyphicon glyphicon glyphicon-trash" id="cancelname" aria-hidden="true">Cancel</span></p>
+     </div>
 
-    <p> Career:{{person.career}} <button class="edit" onclick="document.getElementById('newcareer').style.display='block'">Edit</button></p>
-     <div id="newcareer" class="modal"><input type="text" id="careerUpdate1"><p><span class="glyphicon glpyicon glyphicon-tree-deciduous"  onclick="document.getElementById('newcareer').style.display='none'"
-        id="updateCareer1" aria-hidden="true">updateCareer</span></p></div>
+    <p> Career:{{person.career}}
+       <button class="edit" id="editcareer">Edit</button></p>
+     <div id="newcareer"><input type="text" id="careerUpdate1">
+       <p><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateCareer1" aria-hidden="true">updateCareer</span>
+         <span class="glyphicon glyphicon glyphicon-trash" id="cancelcareer" aria-hidden="true">Cancel</span>
+      </p>
+    </div>
 
-    <p> Vehicle:{{person.havevehicle12345}}<span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateVehicle1" aria-hidden="true">update</span></p>
+    <p> Vehicle:{{person.vehicle}}
+      <button class="edit" id="updateVehicle1">update</button>
+    </p>
 
-    <p> Gender:{{person.gender}}</p>
+    <p> Gender:{{person.gender}}
+      <button class="edit" id="updategender">Edit</button>
+      <div class="edit" id="newgender">
+        <select id="selectgender" value="{{person.gender}}">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateGender" aria-hidden="true">updateGender</span>
+        <span class="glyphicon glyphicon glyphicon-trash" id="cancelgender" aria-hidden="true">Cancel</span>
+      </div>
+    </p>
 
-    <p> Otherinfo:{{person.otherinfo}} <button class="edit" onclick="document.getElementById('newotherinfo').style.display='block'">Edit</button></p>
-     <div id="newotherinfo" class="modal"><input type="text" id="otherinfoUpdate1"><p><span class="glyphicon glpyicon glyphicon-tree-deciduous" onclick="document.getElementById('newotherinfo').style.display='none'"
-       id="updateotherinfo1" aria-hidden="true">update</span></p></div>
-  <span class="glyphicon glyphicon glyphicon-erase" id="erase2" aria-hidden="true">delete</span>
-  </div>
+    <p> Otherinfo:{{person.otherinfo}}
+      <button class="edit" id="editotherinfo">Edit</button></p>
+      <div id="newotherinfo">
+       <input type="text" id="otherinfoUpdate1">
+       <p><span class="glyphicon glpyicon glyphicon-tree-deciduous" id="updateotherinfo1" aria-hidden="true">update</span>
+       <span class="glyphicon glyphicon glyphicon-trash" id="cancelotherinfo" aria-hidden="true">Cancel</span></p>
+      </div>
+     <button id="deleteprofile">Delete</button>
+   </div>
 </template>

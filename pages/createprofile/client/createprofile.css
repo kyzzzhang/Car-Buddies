@@ -25,11 +25,18 @@
 .profileprint p{
 	color:yellow;
 }
-
-#newname {
-	display:"none";
+#newotherinfo{
+	display:none;
 }
-
+#newgender{
+	display:none;
+}
+#newname {
+	display:none;
+}
+#newcareer{
+	display:none;
+}
 .edit{
 	color:blue;
 }

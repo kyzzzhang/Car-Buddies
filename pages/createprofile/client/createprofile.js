@@ -1,7 +1,13 @@
 Template.showuser.helpers({
   peoplelist() {return AllUsers.find()},
 })
-
+Template.createprofile.helpers({
+  hasProfile(){
+    if(AllUsers.findOne({userId:Meteor.userId()})){
+      return true;
+    }
+  }
+})
 
 
 Template.createprofile.events({
@@ -17,7 +23,7 @@ Template.createprofile.events({
     }else{
       gender="other";
     };
-    const havevehicle=instance.$('#vehicle').val();
+    const vehicle=instance.$('#vehicle').val();
     const otherinfo=instance.$('#otherinfo').val();
     friend_list = [];
     console.log('adding '+name);
@@ -31,7 +37,7 @@ Template.createprofile.events({
       name:name,
        career:career,
        gender:gender,
-       havevehicle12345:havevehicle,
+       vehicle:vehicle,
        otherinfo:otherinfo,
        userId:Meteor.userId(),
        friend_list:friend_list,
@@ -53,29 +59,59 @@ Template.createprofile.events({
   })
 
 Template.showprofile.events({
-  'click #erase2'(elt,instance){
+  'click #deleteprofile'(elt,instance){
     console.dir(this);
     console.log(this.person._id);
     Meteor.call('newuser.remove',this.person);
   },
+
+  'click #editname'(elt,instance){
+    instance.$('#newname').css("display","block");
+  },
+  'click #cancelname'(elt,instance){
+    instance.$('#newname').css("display","none");
+  },
   'click #updateUsername1'(elt,instance){
-    $('.newname').css("display","block");
     const name=instance.$('#usernameUpdate1').val();
     console.log('modifying '+name);
     instance.$('#usernameUpdate1').val("");
     Meteor.call('allusers.updateName', this.person._id, name)
+    instance.$('#newname').css("display","none");
+  },
+  'click #editcareer'(elt,instance){
+    instance.$('#newcareer').css("display","block");
+  },
+  'click #cancelcareer'(elt,instance){
+    instance.$('#newcareer').css("display","none");
   },
   'click #updateCareer1'(elt,instance){
     const career=instance.$('#careerUpdate1').val();
     console.log('modifying '+career);
     instance.$('#careerUpdate1').val("");
     Meteor.call('allusers.updateCareer', this.person._id, career)
+    instance.$('#newcareer').css("display","none");
   },
+  'click #updateGender'(elt,instance){
+    const newgender=instance.$("#selectgender").val();
+    Meteor.call('allusers.updateGender', this.person._id, newgender)
+    instance.$('#newgender').css("display","none");
+  },
+  'click #updategender'(elt,instance){
+    instance.$('#newgender').css("display","block");
+  },
+  'click #cancelgender'(elt,instance){
+    instance.$('#newgender').css("display","none");
+  },
+  'click #cancelotherinfo'(elt,instance){
+    instance.$('#newotherinfo').css("display","none");
+  },
+
   'click #updateVehicle1'(elt,instance) {
     console.dir(this);
     console.log(this.person._id);
     //get vehicle
-    const vehicle = this.person.havevehicle12345;
+    console.log(this.person.vehicle)
+    const vehicle = this.person.vehicle;
     var new_value = "";
     if(vehicle === "yes"){
       new_value = "no";
@@ -89,6 +125,10 @@ Template.showprofile.events({
     console.log('modifying '+otherinfo);
     instance.$('#otherinfoUpdate1').val("");
     Meteor.call('allusers.updateOtherinfo',this.person._id,otherinfo)
+    instance.$('#newotherinfo').css("display","none");
+  },
+  'click #editotherinfo'(elt,instance){
+    instance.$('#newotherinfo').css("display","block");
   }
 })
 Template.showprofile.onCreated(function(){
