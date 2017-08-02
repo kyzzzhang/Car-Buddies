@@ -16,9 +16,9 @@
 
       <div class="form">
         <div class="field">
-          <textarea id="forumpost" rows="4" cols="50" placeholder="Share new things"></textarea>
+          <textarea id="forumpost" rows="10" cols="135" placeholder="Share new things"></textarea>
         </div>
-        <button class="button" id="submitforum">Post</button>
+        <button class="buttonpost" id="submitforum">Post</button>
       </div>
 
 </template>
@@ -26,9 +26,9 @@
 <template name="showownpost">
   <div class="post">
     <p>{{p.createdAt}}<br>
-    <i class="user icon"></i>{{p.name}}<br>
-    <i class="comment icon"></i>{{p.text}}<br>
-    <button id="editforum" class="ui button" data-toggle="modal" data-target="#myModal_{{p._id}}">Edit</button>
+    {{p.name}}<br>
+    {{p.text}}<br>
+    <button id="editforum" class="buttonpost" data-toggle="modal" data-target="#myModal_{{p._id}}">Edit</button>
 
     <div class="modal fade" id="myModal_{{p._id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -45,13 +45,13 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="button small" data-dismiss="modal">Close</button>
-            <button type="button" class="button small primary" id="updateforum">Save changes</button>
+            <button type="buttonpost" class="button small" data-dismiss="modal">Close</button>
+            <button type="buttonpost" class="button small primary" id="updateforum">Save changes</button>
           </div>
         </div>
       </div>
     </div>
-    <button class="ui button" id="deleteforum">Delete</button></p>
+    <button class="buttonpost" id="deleteforum">Delete</button></p>
     <hr>
   </div>
 </template>
