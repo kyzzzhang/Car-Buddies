@@ -1,6 +1,4 @@
 .traveler{
-	background-image: url("images/background8.jpg");
-	background-size:100% 100%;
 	position:absolute;
 	width:89% ;
 	height:100%;
@@ -11,7 +9,14 @@
 
 }
 .traveler h1{
-	color:black;
+	color:white;
+	font-size: 35px;
 	font-family: Comic Sans MS, Comic Sans, cursive;
-
+}
+.traveler tr,td,th{
+	color:white;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+}
+#travelinfopic{
+	position: absolute;
 }
