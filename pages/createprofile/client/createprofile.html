@@ -48,6 +48,10 @@
     <p><strong>Name</strong></p>
     <input type="text" class="form-control" id="name" placeholder="Name">
   <hr>
+  <p><strong>Account: <input type="text" class="form-control" name="user"><br></strong></p>
+  <hr>
+  <p><strong>Password: <input type="password" class="form-control" name="password"></strong></p>
+  <hr>
   <p><strong>Gender</strong></p>
   <input type="radio" name="gender" id="male" checked> Male<br>
   <input type="radio" name="gender" id="female"> Female<br>
@@ -64,6 +68,14 @@
   <hr>
       <p><strong>Want your Car Buddy to learn more about you?</strong></p>
     <textarea row=3 col=50  type="text" class="form-control" id="otherinfo" placeholder="I'm cute"></textarea>
+  <hr>
+  <p><strong>Color chooser</strong></p>
+  <input type="color">
+  <hr>
+  <div>
+    <input type="checkbox" id="checkBox" class="form-control">
+    <p><strong><label for="subscribeNews">Allow Publish</label></strong></p>
+  </div>
   <hr>
   <button type="submit" class="btn button btn btn-lg" id="submitnow">Submit</button>
   {{/if}}
